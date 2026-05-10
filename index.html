@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Mars Colony Commander | Ares One</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="logo-area">
+                <span class="logo-icon">🔴</span>
+                <h1>ARES ONE <span class="light">• COMMAND CENTER</span></h1>
+            </div>
+            <div class="sol-date">
+                <span class="label">SOL</span>
+                <span id="solCounter" class="sol-value">147</span>
+            </div>
+        </header>
+
+        <div class="main-grid">
+            <div class="left-panel">
+                <div class="card resources-card">
+                    <h2>📦 РЕСУРСИ КОЛОНІЇ</h2>
+                    <div class="resources-list" id="resourcesList"></div>
+                    <div class="warning-message" id="warningMsg"></div>
+                </div>
+
+                <div class="card events-card">
+                    <h2>📡 БОРТОВИЙ ЖУРНАЛ</h2>
+                    <div class="events-log" id="eventsLog"></div>
+                    <button id="clearLogBtn" class="small-btn">🧹 Очистити журнал</button>
+                </div>
+            </div>
+
+            <div class="center-panel">
+                <div class="card commander-card">
+                    <h2>🎛️ ДИСПЕТЧЕРСЬКА КОНСОЛЬ</h2>
+                    <div class="console-grid" id="actionButtons"></div>
+                </div>
+
+                <div class="card status-card">
+                    <h2>🏭 СТАН СИСТЕМ</h2>
+                    <div id="systemsStatus" class="systems-status"></div>
+                    <div class="fractal-note">⚡ Ефективність залежить від ресурсів</div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="card crew-card">
+                    <h2>👩‍🚀 АКТИВНИЙ ПЕРСОНАЛ</h2>
+                    <ul id="crewList"></ul>
+                </div>
+                <div class="card mission-card">
+                    <h2>🏆 МІСІЯ «ЧЕРВОНИЙ ФЕІНІКС»</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="missionProgress" style="width: 0%;"></div>
+                    </div>
+                    <p id="missionStatus">Очікує на дії...</p>
+                    <div class="medals" id="medalArea">⭐ Прогрес до завершення місії</div>
+                </div>
+            </div>
+        </div>
+        <footer class="dashboard-footer">
+            <span>⚡ Керуй базою — кожна дія має наслідки. Марсіанський протокол 2047</span>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

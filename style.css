@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 10% 20%, #0b0d17, #03050b);
+    min-height: 100vh;
+    padding: 1.5rem;
+    color: #eee;
+    position: relative;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                      radial-gradient(1px 1px at 70px 120px, #ffcc99, rgba(0,0,0,0));
+    background-size: 200px 200px, 150px 150px;
+    background-repeat: repeat;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding: 1rem 0 2rem;
+    border-bottom: 2px solid #e07a2c70;
+    margin-bottom: 2rem;
+}
+
+.logo-area h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ffb347, #ff6a2c);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+.logo-area .light {
+    font-size: 0.9rem;
+    font-weight: 300;
+    background: none;
+    color: #ffb077;
+}
+
+.sol-date {
+    background: #1e1f2c;
+    padding: 0.4rem 1.2rem;
+    border-radius: 60px;
+    border-left: 3px solid #e2582c;
+}
+
+.sol-value {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-left: 8px;
+    color: #ffa25b;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 950px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
+
+.card {
+    background: rgba(12, 15, 26, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 1.8rem;
+    padding: 1.4rem 1.2rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(224, 122, 44, 0.3);
+    box-shadow: 0 10px 30px -12px black;
+    transition: all 0.2s;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    border-left: 3px solid #e2582c;
+    padding-left: 12px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.resource-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #2a2e42;
+    font-weight: 500;
+}
+
+.resource-name {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.resource-value {
+    font-family: 'Orbitron', monospace;
+    color: #ffbc6e;
+    font-weight: bold;
+}
+
+.warning-message {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #ff896b;
+    text-align: center;
+}
+
+.events-log {
+    background: #05070f;
+    border-radius: 1rem;
+    padding: 0.6rem;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.event-entry {
+    padding: 5px;
+    border-bottom: 1px solid #2f354a;
+    color: #cdd9ff;
+}
+
+.small-btn {
+    background: #37241c;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 30px;
+    width: 100%;
+    cursor: pointer;
+    color: #ffb576;
+    font-weight: bold;
+    transition: 0.1s;
+}
+
+.small-btn:hover {
+    background: #5c382a;
+    color: white;
+}
+
+.console-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.action-btn {
+    background: #201e2c;
+    border: 1px solid #e2582c80;
+    padding: 10px 12px;
+    border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1 0 110px;
+    transition: 0.15s;
+    color: #fdcb8c;
+}
+
+.action-btn:hover {
+    background: #c45128;
+    color: white;
+    transform: scale(1.02);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.system-row {
+    margin-bottom: 16px;
+}
+
+.system-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.progress-bg {
+    background: #1f2538;
+    border-radius: 20px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff8c42, #ff5722);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.crew-card ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.crew-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #2f334c;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-container {
+    background: #23273e;
+    border-radius: 30px;
+    height: 20px;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #f09819, #ff5e00);
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    transition: width 0.3s;
+}
+
+.medals {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+.fractal-note {
+    margin-top: 12px;
+    font-size: 0.7rem;
+    text-align: center;
+    color: #ffa25b;
+    opacity: 0.7;
+}
